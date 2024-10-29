@@ -1,4 +1,4 @@
-var socket = io("http://192.168.1.12:3000")
+var socket = io("http://localhost:3000")
 socket.on("disconnect", () => {})
 
 $(document).ready(function () {
