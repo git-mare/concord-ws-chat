@@ -1,0 +1,21 @@
+<script>
+    document.getElementById('languageSelector').addEventListener('change', function() {
+        const selectedLanguage = this.value
+        const selectElement = document.getElementById('languageSelector')
+        const defaultOption = selectElement.querySelector('option[selected]')
+        defaultOption.removeAttribute('selected')
+
+        fetch(`/setlang/${selectedLanguage}`, { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = window.location.href
+
+                } else {
+                    console.error('Error.')
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    })
+</script>

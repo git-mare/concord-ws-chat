@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=__('home.title')%></title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="chat-app">
+        <div id="burger-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div id="close-icon"></div>
+
+        <div id="menu-nav">
+            <div class="channel-sidebar">
+                <h3><%=__('home.servername')%></h3>
+                <div class="channel"><%=__('home.channeltitle')%></div>
+                <input type="text" name="username" class="nickname" id="username" placeholder="<%=__('home.usernamebox')%>">
+                <%- include('lang/lang') %>
+            </div>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header"><%=__('home.channeltitle')%></div>
+            <div class="messages" id="chat-message">
+
+            </div>
+            <div class="message-input">
+                <input type="text" name="message" class="text" id="msg" placeholder="<%=__('home.chatbox')%>" onkeypress="checkEnter(event)" />
+                <button class="send-button" onclick="send()"><i class="fa fa-send-o send-button"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="/js/server.js"></script>
+    <%- include('lang/lang-script') %>
+</body>
+</html>

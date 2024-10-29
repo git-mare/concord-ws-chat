@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #36393f;
+}
+
+.chat-app {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    background-color: #2f3136;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.channel-sidebar {
+    background-color: #202225;
+    color: #b9bbbe;
+}
+
+.server-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #5865f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.channel-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+.channel-sidebar .nickname {
+    margin-top: 53vh;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2f3136;
+    color: #ffffff;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.channel-sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.channel {
+    padding: 8px;
+    cursor: pointer;
+    color: #8e9297;
+}
+
+.channel:hover {
+    background-color: #3a3c43;
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #36393f;
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: #2f3136;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.send-button {
+    padding: 5px;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.send-button:hover {
+    transition-duration: 0.5s;
+    border-radius: 100px;
+    background-color: #5865f2;
+}
+
+.messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #7289da;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.message-content {
+    background-color: #40444b;
+    padding: 8px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.username {
+    font-weight: bold;
+    display: block;
+    font-size: 14px;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.message-input {
+    padding: 10px;
+    background-color: #40444b;
+}
+
+.message-input input {
+    width: 94%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2f3136;
+    color: #ffffff;
+    outline: none;
+}
+
+.lang {
+    margin: 0;
+    min-width: 12vw;
+    width: auto;
+    font-family: 'Acme', sans-serif;
+    font-family: 'Prompt', sans-serif;
+}
+
+#languageSelector {
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#languageSelector option {
+    font-size: 14px;
+}
+.mini-title {
+    font-size: 15px;
+    color: #888888;
+}
+
+@media only screen and (max-width: 700px){
+    .chat-app, .channel-sidebar {
+        width: 100vw;
+        height: 100vh;
+    }
+    .chat-area {
+        float: left;
+    }
+    .message-input input {
+        width: 80%;
+    }
+    .nickname, #languageSelector {
+        width: 90%;
+        height: 50px;
+    }
+    /* Icons */
+    #burger-icon {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    #close-icon {
+        padding: 15px;
+        margin: 0px;
+        flex-direction: column;
+        cursor: pointer;
+        display: none;
+        position: relative;
+        float: left;
+        z-index: 10;
+    }
+    #close-icon::before, #close-icon::after {
+        content: "";
+        width: 25px;
+        height: 3px;
+        background-color: #212121;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.4s;
+    }
+    #close-icon::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    #close-icon::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #212121;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+    #menu-nav {
+        display: none;
+        z-index: 5;
+        width: 99%;
+    }
+
+    #menu-nav.active {
+        display: block;
+    }
+
+}
