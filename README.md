@@ -12,3 +12,8 @@ A simple real-time chat system with websocket and language selection.
     - express
     - i18n
     - socket.io
+
+## Available Languages:
+- English
+- Brazilian Portuguese
+- You may manually add more languages ​​to middlewares and locales.
